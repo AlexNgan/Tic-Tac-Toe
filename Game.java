@@ -3,7 +3,11 @@
  *  This class contains the constructor for the game, the method which displays the game,
  *  all the logic to determine if the game has been won, and the logic that allows the
  *  CPU to make a turn.
- */ 
+ *
+ *  CPU logic: Places an 'O' in one tile adjacent to the player's selected. The specific tile's position
+ *  (above, below, left, right, diagonals) is determined by a random number generator. The CPU selects the
+ *  tile if it is empty and a valid selection.
+ */  
 
 public class Game{
   //3 rows, 3 columns.
