@@ -62,50 +62,50 @@ public class Game{
       //Run thru columns.
       for(int j = 0; j < game[0].length; j++){
         //Scenario 1: Two X's in column.
-        if(i == 0){
-          if(game[i][j].equals(player) && game[i+1][j].equals(player)){      //Case: X | X | -
+        if(j == 0){
+          if(game[i][j].equals(player) && game[i][j+1].equals(player)){      //Case: X | X | -
             //If the next tile is blank.
-            if(!game[i+2][j].equals(player) && !game[i+2][j].equals(CPU)){
-              game[i+2][j] = CPU;
+            if(!game[i][j+2].equals(player) && !game[i][j+2].equals(CPU)){
+              game[i][j+2] = CPU;
               return;
             }
           }
-        }else if(i == 1){                                                    //Case: X | - | X 
-          if(game[i-1][j].equals(player) && game[i+1][j].equals(player)){
+        }else if(j == 1){                                                    //Case: X | - | X 
+          if(game[i][j-1].equals(player) && game[i][j+1].equals(player)){
             if(!game[i][j].equals(player) && !game[i][j].equals(CPU)){
               game[i][j] = CPU;
               return;
             }
           }
-        }else if(i == 2){
-          if(game[i][j].equals(player) && game[i-1][j].equals(player)){      //Case: - | X | X
+        }else if(j == 2){
+          if(game[i][j].equals(player) && game[i][j-1].equals(player)){      //Case: - | X | X
             //If the first tile is blank.
-            if(!game[i-2][j].equals(player) && !game[i-2][j].equals(CPU)){
-              game[i-2][j] = CPU;
+            if(!game[i][j-1].equals(player) && !game[i][j-1].equals(CPU)){
+              game[i][j-1] = CPU;
               return;
             }
           }
         }
         
         //Scenario 2: Two X's in a row.
-        if(j == 0){                                                          //Case: | X |
-          if(game[i][j].equals(player) && game[i][j+1].equals(player)){      //      | X |
-            if(!game[i][j+2].equals(player) && !game[i][j+2].equals(CPU)){   //      | - |
-              game[i][j+2] = CPU;
+        if(i == 0){                                                          //Case: | X |
+          if(game[i][j].equals(player) && game[i+1][j].equals(player)){      //      | X |
+            if(!game[i+2][j].equals(player) && !game[i+2][j].equals(CPU)){   //      | - |
+              game[i+2][j] = CPU;
               return;
             }
           }
-        }else if(j == 1){                                                    //Case: | X |
-          if(game[i][j-1].equals(player) && game[i][j+1].equals(player)){    //      | - |
+        }else if(i == 1){                                                    //Case: | X |
+          if(game[i-1][j].equals(player) && game[i+1][j].equals(player)){    //      | - |
             if(!game[i][j].equals(player) && !game[i][j].equals(CPU)){       //      | X |
               game[i][j] = CPU;
               return;
             }
           }
-        }else if(j == 2){                                                    //Case: | - |
-          if(game[i][j].equals(player) && game[i][j+1].equals(player)){      //      | X |
-            if(!game[i][j+2].equals(player) && !game[i][j+2].equals(CPU)){   //      | X |
-              game[i][j+2] = CPU;
+        }else if(i == 2){                                                    //Case: | - |
+          if(game[i][j].equals(player) && game[i-1][j].equals(player)){      //      | X |
+            if(!game[i-2][j].equals(player) && !game[i-2][j].equals(CPU)){   //      | X |
+              game[i-2][j] = CPU;
               return;
             }
           }
@@ -116,22 +116,22 @@ public class Game{
           if(game[2][0].equals(player)){
             if(!game[0][2].equals(player) && !game[0][2].equals(CPU)){       //Case: - | - | -
               game[0][2] = CPU;                                              //      - | X | -
-              return;                                                       //      X | - | -
+              return;                                                        //      X | - | -
             }
           }else if(game[0][2].equals(player)){
             if(!game[2][0].equals(player) && !game[2][0].equals(CPU)){       //Case: - | - | X
               game[2][0] = CPU;                                              //      - | X | -
-              return;                                                       //      - | - | -
+              return;                                                        //      - | - | -
             }                                                             
           }else if(game[0][0].equals(player)){
             if(!game[2][2].equals(player) && !game[2][2].equals(CPU)){       //Case: X | - | -
               game[2][2] = CPU;                                              //      - | X | -
-              return;                                                       //      - | - | -
+              return;                                                        //      - | - | -
             }                                                             
           }else if(game[2][2].equals(player)){
             if(!game[0][0].equals(player) && !game[0][0].equals(CPU)){       //Case: - | - | -
               game[0][0] = CPU;                                              //      - | X | -
-              return;                                                       //      - | - | X
+              return;                                                        //      - | - | X
             }                                                             
           }
         }      
@@ -143,7 +143,7 @@ public class Game{
       q = -1;
       p = ((int)(3 * Math.random()));
       q = ((int)(3 * Math.random()));
-      if(!game[p][q].equals(player) && !game[p][q].equals(CPU)){
+      if(!game[p][q].equals(player) && !game[p][q].equals(CPU)){  //Robot moves randomly.
         game[p][q] = CPU;
         break;
       }
