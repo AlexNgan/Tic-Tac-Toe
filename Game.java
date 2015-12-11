@@ -135,6 +135,18 @@ public class Game{
             }                                                             
           }
         }      
+        if(game[2][2].equals(player) && game[0][0].equals(player)){
+          if(!game[1][1].equals(player) && !game[1][1].equals(CPU)){       //Case: X | - | -
+            game[1][1] = CPU;                                              //      - | - | -
+            return;                                                        //      - | - | X
+          }                                                             
+        }
+        if(game[2][0].equals(player) && game[0][2].equals(player)){
+          if(!game[1][1].equals(player) && !game[1][1].equals(CPU)){       //Case: - | - | X
+            game[1][1] = CPU;                                              //      - | - | -
+            return;                                                        //      X | - | -
+          }                                                             
+        }
       }
     }
     //If none of the situations above apply.
