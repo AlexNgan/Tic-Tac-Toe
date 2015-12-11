@@ -134,7 +134,7 @@ public class Game{
               return;                                                        //      - | - | X
             }                                                             
           }
-        }      
+        }   
         if(game[2][2].equals(player) && game[0][0].equals(player)){
           if(!game[1][1].equals(player) && !game[1][1].equals(CPU)){       //Case: X | - | -
             game[1][1] = CPU;                                              //      - | - | -
@@ -160,6 +160,23 @@ public class Game{
         break;
       }
     }
+  }
+  
+  //Determines if the game is a draw.
+  public boolean isTie(){
+    int count = 9;
+    for(int x = 0; x < game.length; x++){         
+      for(int y = 0; y < game[0].length; y++){   
+        if(game[x][y].contains(" - ")){
+          count--;
+        }
+      }
+    }
+    if(count == 9){
+      System.out.println("It's a tie!");
+      return true;
+    }
+    return false;
   }
   
   //Detects if there are 3 X's or O's in a row.
