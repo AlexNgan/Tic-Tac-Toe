@@ -18,7 +18,7 @@ public class GameTest{
     ticTac.displayGame();
     System.out.println("");
     
-    while(ticTac.isDone() == false){
+    while(ticTac.isDone() == false && ticTac.isTie() == false){
       System.out.print("Enter an x-value. Range: 0 to 2.");
       int x = scan.nextInt();
       System.out.print("Enter a y-value. Range: 0 to 2.");
