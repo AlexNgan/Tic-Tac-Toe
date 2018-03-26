@@ -1,4 +1,4 @@
-//Author: Alex
+//Author: Mortyyy
 /*
  *  This class contains the constructor for the game, the method which displays the game,
  *  all the logic to determine if the game has been won, and the logic that allows the
