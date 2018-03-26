@@ -1,6 +1,6 @@
 import java.util.Scanner; 
 
-//Author: Alex
+//Author: Mortyyy
 //This is the main class for the tic-tac-toe game. Requires Game.java as well.
 /* 
  *  Running this creates a new 3x3 tile game, where all the tiles are set to a dash.
